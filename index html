@@ -4,15 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Guia Digital Sênior - Navegue com Segurança e Tranquilidade</title>
-  
   <!-- Fontes do Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   
   <style>
+    /* ==========================================================
+       1. VARIÁVEIS DE ESTILO E TEMA
+       ========================================================== */
     :root {
-      /* Paleta Suave com Tema Rosa Pastel */
       --bg-color: #fdf2f8;
       --card-bg: #ffffff;
       --text-color: #331a1a;
@@ -30,16 +31,15 @@
       --danger-border: #fca5a5;
       --danger-text: #991b1b;
       --border-color: #e9cedb;
-      --shadow: 0 6px 15px rgba(209, 98, 157, 0.12);
+      --shadow: 0 6px 15px rgba(209, 98, 157, 0.1);
       
-      /* Tipografia e Acessibilidade */
       --font-heading: 'Montserrat', sans-serif;
       --font-body: 'Open Sans', sans-serif;
       --base-font-size: 19px;
       --focus-ring: 4px solid #f9d87d;
     }
 
-    /* Modo de Alto Contraste */
+    /* Alternador de Alto Contraste */
     #toggle-contrast:checked ~ .app-container {
       --bg-color: #000000;
       --card-bg: #121212;
@@ -61,11 +61,14 @@
       --shadow: 0 0 0 2px #ffffff;
     }
 
-    /* Aumento do Tamanho de Fonte */
+    /* Alternador de Texto Ampliado */
     #toggle-text-size:checked ~ .app-container {
       --base-font-size: 24px;
     }
 
+    /* ==========================================================
+       2. REGRAS GERAIS E TIPOGRAFIA
+       ========================================================== */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -90,6 +93,9 @@
       display: none;
     }
 
+    /* ==========================================================
+       3. BARRA DE ACESSIBILIDADE FIXA NO TOPO
+       ========================================================== */
     .accessibility-bar {
       background-color: #2d1822;
       color: #ffffff;
@@ -149,6 +155,9 @@
       border-color: #ffffff;
     }
 
+    /* ==========================================================
+       4. ESTRUTURA E CONTAINER PRINCIPAL
+       ========================================================== */
     .app-container {
       max-width: 960px;
       margin: 0 auto;
@@ -191,6 +200,9 @@
       font-size: 1rem;
     }
 
+    /* ==========================================================
+       5. NAVEGAÇÃO DE TÓPICOS
+       ========================================================== */
     .quick-nav {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -229,6 +241,9 @@
       margin-bottom: 5px;
     }
 
+    /* ==========================================================
+       6. SEÇÕES DE DICAS (<details>)
+       ========================================================== */
     .section-title {
       font-size: 1.8rem;
       margin-bottom: 20px;
@@ -352,6 +367,9 @@
       padding-left: 5px;
     }
 
+    /* ==========================================================
+       7. QUIZ INTERATIVO (PURE CSS)
+       ========================================================== */
     .quiz-section {
       background-color: var(--card-bg);
       border: 4px solid var(--accent-color);
@@ -453,6 +471,9 @@
       background-color: var(--danger-bg);
     }
 
+    /* ==========================================================
+       8. SEÇÃO DE EMERGÊNCIA
+       ========================================================== */
     .emergency-section {
       background-color: var(--danger-bg);
       border: 3px solid var(--danger-border);
@@ -504,6 +525,9 @@
       color: var(--danger-text);
     }
 
+    /* ==========================================================
+       9. RODAPÉ
+       ========================================================== */
     footer {
       text-align: center;
       padding: 40px 20px;
@@ -538,12 +562,14 @@
 </head>
 <body>
 
+  <!-- CONTROLES ACESSÍVEIS COM CHECKBOX (CSS PURO) -->
   <input type="checkbox" id="toggle-contrast" class="state-toggle" aria-label="Alternar Alto Contraste">
   <input type="checkbox" id="toggle-text-size" class="state-toggle" aria-label="Alternar Tamanho do Texto">
 
+  <!-- BARRA DE ACESSIBILIDADE FIXA NO TOPO -->
   <div class="accessibility-bar" role="region" aria-label="Controles de Acessibilidade">
     <div class="accessibility-title">
-      <span>🛡️ Guia Digital Rosa Sênior</span>
+      <span>🛡️ Guia Digital Sênior</span>
     </div>
     <div class="accessibility-controls">
       <label for="toggle-text-size" class="btn-access btn-text-size" tabindex="0" role="button" aria-pressed="false">
@@ -557,6 +583,7 @@
 
   <div class="app-container">
 
+    <!-- CABEÇALHO PRINCIPAL -->
     <header class="main-header">
       <h1>Sua Segurança Digital com Tranquilidade</h1>
       <p>Aprenda a navegar na internet, usar o WhatsApp e o banco no celular sem medo de golpes. Dicas fáceis e diretas.</p>
@@ -565,6 +592,7 @@
       </div>
     </header>
 
+    <!-- NAVEGAÇÃO RÁPIDA -->
     <nav class="quick-nav" aria-label="Menu Rápido de Tópicos">
       <a href="#whatsapp" class="nav-card">
         <div class="topic-image-placeholder">📱</div>
@@ -584,6 +612,7 @@
       </a>
     </nav>
 
+    <!-- SEÇÃO DE DICAS PRINCIPAIS -->
     <main>
       <h2 class="section-title">📘 Suas Dicas de Proteção</h2>
 
@@ -599,6 +628,7 @@
           </summary>
           <div class="card-content">
             <div class="content-image-section">👤</div>
+            
             <p>O WhatsApp é a forma mais comum de golpistas tentarem te enganar. Eles tentam se passar por pessoas conhecidas para pedir dinheiro.</p>
 
             <div class="alert-box alert-danger">
@@ -631,6 +661,7 @@
           </summary>
           <div class="card-content">
             <div class="content-image-section">📞</div>
+
             <p>Os golpistas conseguem falsificar o número de telefone do banco e são muito educados e convincentes ao falar.</p>
 
             <div class="alert-box alert-danger">
@@ -663,26 +694,9 @@
           </summary>
           <div class="card-content">
             <div class="content-image-section">📝</div>
+
             <p>Usar senhas iguais para tudo ou datas de nascimento conhecidas facilita a ação de hackers.</p>
 
             <div class="alert-box alert-warning">
               <strong>💡 Dica simples para senhas fortes e fáceis:</strong>
-              <p>Crie uma frase misturando palavras, números e símbolos. Exemplo: <code>GostoDeCafe@2025!</code>. É fácil para você lembrar e difícil para outros adivinharem.</p>
-            </div>
-
-            <ul class="step-list">
-              <li><strong>Não anote senhas em papéis soltos</strong> ou na capinha do celular.</li>
-              <li>Se precisar anotar, guarde o caderno num local seguro e trancado em casa.</li>
-              <li>Nunca compartilhe suas senhas com estranhos, mesmo que digam ser de confiança.</li>
-            </ul>
-          </div>
-        </details>
-      </article>
-
-      <!-- TÓPICO 4: LINKS E SMS -->
-      <article class="topic-card" id="links">
-        <details>
-          <summary>
-            <div class="summary-title">
-              <span style="font-size: 1.8rem;">✉️</span>
-              <span>4.
+              <p>Crie uma frase misturando palavras, números e símbolos. Exemplo: <code>GostoDeCafe@2025!</code>. É fácil para você lembrar e difícil
