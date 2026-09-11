@@ -1,27 +1,25 @@
-
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Guia Digital Sênior - Navegue com Segurança e Tranquilidade</title>
-  <!-- Importando Fontes Amigáveis do Google Fonts -->
+  
+  <!-- Fontes do Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   
   <style>
-    /* ==========================================================
-       1. VARIÁVEIS DE ESTILO E TEMA (TOM PASTEL E ALTO CONTRASTE)
-       ========================================================== */
     :root {
-      /* Nova Paleta Rosa Pastel e Suave */
-      --bg-color: #fdf2f8; /* Rosa bem clarinho de fundo */
+      /* Paleta Suave com Tema Rosa Pastel */
+      --bg-color: #fdf2f8;
       --card-bg: #ffffff;
-      --text-color: #331a1a; /* Marrom escuro para melhor leitura no rosa */
+      --text-color: #331a1a;
       --text-muted: #6b4f4f;
-      --primary-color: #d1629d; /* Rosa principal suave mas visível */
-      --primary-hover: #b94f86; /* Rosa mais escuro para hover */
-      --accent-color: #8c71b6; /* Roxo suave para acentos */
+      --primary-color: #d1629d;
+      --primary-hover: #b94f86;
+      --accent-color: #8c71b6;
       --warning-bg: #fffbf0;
       --warning-border: #f9d87d;
       --warning-text: #8c5d12;
@@ -31,17 +29,17 @@
       --danger-bg: #fff1f2;
       --danger-border: #fca5a5;
       --danger-text: #991b1b;
-      --border-color: #e9cedb; /* Rosa pastel suave para bordas */
-      --shadow: 0 6px 15px rgba(209, 98, 157, 0.1); /* Sombra com toque de rosa */
+      --border-color: #e9cedb;
+      --shadow: 0 6px 15px rgba(209, 98, 157, 0.12);
       
-      /* Tipografia */
+      /* Tipografia e Acessibilidade */
       --font-heading: 'Montserrat', sans-serif;
       --font-body: 'Open Sans', sans-serif;
       --base-font-size: 19px;
       --focus-ring: 4px solid #f9d87d;
     }
 
-    /* Alternador de Alto Contraste (via Checkbox CSS) - Mantido */
+    /* Modo de Alto Contraste */
     #toggle-contrast:checked ~ .app-container {
       --bg-color: #000000;
       --card-bg: #121212;
@@ -63,14 +61,11 @@
       --shadow: 0 0 0 2px #ffffff;
     }
 
-    /* Alternador de Texto Ampliado (via Checkbox CSS) - Mantido */
+    /* Aumento do Tamanho de Fonte */
     #toggle-text-size:checked ~ .app-container {
       --base-font-size: 24px;
     }
 
-    /* ==========================================================
-       2. REGRAS GERAIS E TIPOGRAFIA
-       ========================================================== */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -91,16 +86,12 @@
       font-weight: 700;
     }
 
-    /* Ocultar checkboxes utilitários */
     .state-toggle {
       display: none;
     }
 
-    /* ==========================================================
-       3. BARRA DE ACESSIBILIDADE FIXA NO TOPO
-       ========================================================== */
     .accessibility-bar {
-      background-color: #2d1822; /* Marrom bem escuro com toque de rosa */
+      background-color: #2d1822;
       color: #ffffff;
       padding: 12px 20px;
       display: flex;
@@ -136,7 +127,7 @@
       background-color: #523741;
       color: #ffffff;
       padding: 10px 18px;
-      border-radius: 20px; /* Bordas mais arredondadas */
+      border-radius: 20px;
       font-size: 0.95rem;
       font-weight: bold;
       cursor: pointer;
@@ -158,9 +149,6 @@
       border-color: #ffffff;
     }
 
-    /* ==========================================================
-       4. ESTRUTURA E CONTAINER PRINCIPAL
-       ========================================================== */
     .app-container {
       max-width: 960px;
       margin: 0 auto;
@@ -170,7 +158,7 @@
     header.main-header {
       background-color: var(--card-bg);
       border: 2px solid var(--border-color);
-      border-radius: 20px; /* Mais arredondado */
+      border-radius: 20px;
       padding: 40px 30px;
       margin-bottom: 30px;
       text-align: center;
@@ -191,7 +179,6 @@
       margin: 0 auto;
     }
 
-    /* Badge explicativo */
     .badge-info {
       display: inline-block;
       background-color: var(--warning-bg);
@@ -204,9 +191,6 @@
       font-size: 1rem;
     }
 
-    /* ==========================================================
-       5. NAVEGAÇÃO DE TÓPICOS (MENU RÁPIDO)
-       ========================================================== */
     .quick-nav {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -236,19 +220,15 @@
     .nav-card:hover, .nav-card:focus {
       transform: translateY(-4px);
       border-color: var(--primary-color);
-      background-color: #fdf2f8; /* Leve rosa ao passar o mouse */
+      background-color: #fdf2f8;
       outline: var(--focus-ring);
     }
 
-    /* Usando ícones grandes como imagens simbólicas */
     .nav-card .topic-image-placeholder {
       font-size: 3.5rem;
       margin-bottom: 5px;
     }
 
-    /* ==========================================================
-       6. SEÇÕES DE DICAS (ACCORDION USANDO <details>)
-       ========================================================== */
     .section-title {
       font-size: 1.8rem;
       margin-bottom: 20px;
@@ -291,7 +271,7 @@
     }
 
     summary:hover, summary:focus {
-      background-color: rgba(209, 98, 157, 0.05); /* Toque rosa pastel */
+      background-color: rgba(209, 98, 157, 0.05);
       outline: var(--focus-ring);
     }
 
@@ -313,26 +293,24 @@
 
     details[open] summary {
       border-bottom: 2px solid var(--border-color);
-      background-color: rgba(209, 98, 157, 0.08); /* Rosa mais visível */
+      background-color: rgba(209, 98, 157, 0.08);
     }
 
     .card-content {
       padding: 30px;
     }
 
-    /* Placeholder para imagem dentro do conteúdo */
     .content-image-section {
       text-align: center;
       margin-bottom: 20px;
       padding: 15px;
       background-color: #fdf2f8;
       border-radius: 10px;
-      font-size: 5rem; /* Ícone bem grande */
+      font-size: 5rem;
       color: var(--primary-color);
       border: 2px solid var(--border-color);
     }
 
-    /* Caixa de Alerta dentro das dicas */
     .alert-box {
       border-radius: 12px;
       padding: 18px 24px;
@@ -374,12 +352,9 @@
       padding-left: 5px;
     }
 
-    /* ==========================================================
-       7. QUIZ INTERATIVO (SEM JAVASCRIPT - PURE CSS)
-       ========================================================== */
     .quiz-section {
       background-color: var(--card-bg);
-      border: 4px solid var(--accent-color); /* Roxo pastel para o quiz */
+      border: 4px solid var(--accent-color);
       border-radius: 20px;
       padding: 35px;
       margin-top: 50px;
@@ -398,7 +373,7 @@
     }
 
     .quiz-question {
-      background-color: #f9f6fd; /* Fundo roxo bem clarinho */
+      background-color: #f9f6fd;
       border: 2px solid var(--accent-color);
       border-radius: 15px;
       padding: 25px;
@@ -418,7 +393,6 @@
       gap: 14px;
     }
 
-    /* Esconder o rádio real para criar botões grandes acessíveis */
     .quiz-options input[type="radio"] {
       position: absolute;
       opacity: 0;
@@ -446,7 +420,6 @@
       outline: var(--focus-ring);
     }
 
-    /* Resposta Feedback via CSS */
     .feedback {
       display: none;
       margin-top: 18px;
@@ -455,7 +428,6 @@
       font-weight: bold;
     }
 
-    /* Seletores CSS para exibir resposta correta/incorreta */
     #q1-correct:checked ~ .feedback-correct {
       display: block;
       background-color: var(--success-bg);
@@ -481,9 +453,6 @@
       background-color: var(--danger-bg);
     }
 
-    /* ==========================================================
-       8. SEÇÃO DE CONTATOS E EMERGÊNCIA
-       ========================================================== */
     .emergency-section {
       background-color: var(--danger-bg);
       border: 3px solid var(--danger-border);
@@ -532,12 +501,9 @@
     .emergency-card span {
       font-size: 1.6rem;
       font-weight: bold;
-      color: var(--danger-text); /* Vermelho escuro */
+      color: var(--danger-text);
     }
 
-    /* ==========================================================
-       9. RODAPÉ
-       ========================================================== */
     footer {
       text-align: center;
       padding: 40px 20px;
@@ -546,7 +512,6 @@
       margin-top: 50px;
     }
 
-    /* Responsividade */
     @media (max-width: 600px) {
       .accessibility-bar {
         flex-direction: column;
@@ -573,11 +538,9 @@
 </head>
 <body>
 
-  <!-- CONTROLES ACESSÍVEIS COM CHECKBOX (CSS PURO) -->
   <input type="checkbox" id="toggle-contrast" class="state-toggle" aria-label="Alternar Alto Contraste">
   <input type="checkbox" id="toggle-text-size" class="state-toggle" aria-label="Alternar Tamanho do Texto">
 
-  <!-- BARRA DE ACESSIBILIDADE FIXA NO TOPO -->
   <div class="accessibility-bar" role="region" aria-label="Controles de Acessibilidade">
     <div class="accessibility-title">
       <span>🛡️ Guia Digital Rosa Sênior</span>
@@ -594,7 +557,6 @@
 
   <div class="app-container">
 
-    <!-- CABEÇALHO PRINCIPAL -->
     <header class="main-header">
       <h1>Sua Segurança Digital com Tranquilidade</h1>
       <p>Aprenda a navegar na internet, usar o WhatsApp e o banco no celular sem medo de golpes. Dicas fáceis e diretas.</p>
@@ -603,27 +565,25 @@
       </div>
     </header>
 
-    <!-- NAVEGAÇÃO RÁPIDA (Com "Imagens" Simbólicas) -->
     <nav class="quick-nav" aria-label="Menu Rápido de Tópicos">
       <a href="#whatsapp" class="nav-card">
-        <div class="topic-image-placeholder">📱</div> <!-- Imagem simbólica -->
+        <div class="topic-image-placeholder">📱</div>
         <span>Golpes no WhatsApp</span>
       </a>
       <a href="#banco" class="nav-card">
-        <div class="topic-image-placeholder">🏛️</div> <!-- Imagem simbólica -->
+        <div class="topic-image-placeholder">🏛️</div>
         <span>Banco e Ligações</span>
       </a>
       <a href="#senhas" class="nav-card">
-        <div class="topic-image-placeholder">🔐</div> <!-- Imagem simbólica -->
+        <div class="topic-image-placeholder">🔐</div>
         <span>Criar Senhas Seguras</span>
       </a>
       <a href="#links" class="nav-card">
-        <div class="topic-image-placeholder">✉️</div> <!-- Imagem simbólica -->
+        <div class="topic-image-placeholder">✉️</div>
         <span>Links e Mensagens</span>
       </a>
     </nav>
 
-    <!-- SEÇÃO DE DICAS PRINCIPAIS -->
     <main>
       <h2 class="section-title">📘 Suas Dicas de Proteção</h2>
 
@@ -638,9 +598,7 @@
             <span class="chevron">▼</span>
           </summary>
           <div class="card-content">
-            <!-- Imagem interna da seção -->
             <div class="content-image-section">👤</div>
-            
             <p>O WhatsApp é a forma mais comum de golpistas tentarem te enganar. Eles tentam se passar por pessoas conhecidas para pedir dinheiro.</p>
 
             <div class="alert-box alert-danger">
@@ -672,9 +630,7 @@
             <span class="chevron">▼</span>
           </summary>
           <div class="card-content">
-            <!-- Imagem interna da seção -->
             <div class="content-image-section">📞</div>
-
             <p>Os golpistas conseguem falsificar o número de telefone do banco e são muito educados e convincentes ao falar.</p>
 
             <div class="alert-box alert-danger">
@@ -706,9 +662,7 @@
             <span class="chevron">▼</span>
           </summary>
           <div class="card-content">
-            <!-- Imagem interna da seção -->
             <div class="content-image-section">📝</div>
-
             <p>Usar senhas iguais para tudo ou datas de nascimento conhecidas facilita a ação de hackers.</p>
 
             <div class="alert-box alert-warning">
@@ -731,93 +685,4 @@
           <summary>
             <div class="summary-title">
               <span style="font-size: 1.8rem;">✉️</span>
-              <span>4. Cuidados com Links e Mensagens de Texto</span>
-            </div>
-            <span class="chevron">▼</span>
-          </summary>
-          <div class="card-content">
-            <!-- Imagem interna da seção -->
-            <div class="content-image-section">🖱️</div>
-
-            <p>Você pode receber mensagens de texto (SMS) ou no WhatsApp de números estranhos com promessas ou ameaças urgentes.</p>
-
-            <div class="alert-box alert-danger">
-              <strong>⚠️ Atenção:</strong> Quase sempre esses links levam para sites falsos que tentam roubar seus dados do cartão ou instalar vírus.
-            </div>
-
-            <div class="alert-box alert-success">
-              <strong>✅ Como agir com segurança:</strong>
-              <ul class="step-list">
-                <li><strong>NÃO CLIQUE</strong> em links azuis de mensagens de desconhecidos.</li>
-                <li>Apague mensagens sobre prêmios de sorteios que você não participou ou encomendas que você não fez.</li>
-              </ul>
-            </div>
-          </div>
-        </details>
-      </article>
-
-      <!-- QUIZ INTERATIVO (Com Visual Roxo Pastel) -->
-      <section class="quiz-section">
-        <div class="quiz-header">
-          <h2>🎯 Teste Seu Conhecimento!</h2>
-          <p>Selecione a resposta correta para aprender mais.</p>
-        </div>
-
-        <div class="quiz-question">
-          <p class="question-text">Pergunta: Você recebe um WhatsApp do número novo do seu filho pedindo um Pix urgente de R$ 300,00 para pagar uma conta. O que você faz?</p>
-
-          <div class="quiz-options">
-            <input type="radio" id="q1-wrong1" name="quiz1">
-            <label for="q1-wrong1" class="quiz-label">A) Faço o Pix na hora para ajudar meu filho.</label>
-            <div class="feedback feedback-wrong1">
-              ❌ Incorreto! Isso pode ser um golpe. Nunca mande dinheiro sem confirmar por voz antes.
-            </div>
-
-            <input type="radio" id="q1-correct" name="quiz1">
-            <label for="q1-correct" class="quiz-label">B) Ligo para o número antigo dele por voz ou vídeo para confirmar.</label>
-            <div class="feedback feedback-correct">
-              🎉 EXCELENTE! Resposta Correta! Confirmar por voz para o número que você já conhece é a ação mais segura.
-            </div>
-
-            <input type="radio" id="q1-wrong2" name="quiz1">
-            <label for="q1-wrong2" class="quiz-label">C) Respondo pedindo os dados do cartão de crédito.</label>
-            <div class="feedback feedback-wrong2">
-              ❌ Incorreto! Nunca envie dados bancários por mensagem.
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- SEÇÃO DE EMERGÊNCIA (Vermelho Pastel) -->
-      <section class="emergency-section">
-        <h2>🚑 Caiu em um golpe? Mantenha a calma e aja!</h2>
-        <p>Se você suspeita que foi vítima de uma fraude, siga estes passos rapidamente:</p>
-
-        <div class="emergency-grid">
-          <div class="emergency-card">
-            <strong>1º Ligue para seu Banco</strong>
-            <p>Bloqueie o cartão e cancele o Pix.</p>
-          </div>
-          <div class="emergency-card">
-            <strong>2º Avise a Polícia</strong>
-            <p>Ligue para o número:</p>
-            <span>190</span>
-          </div>
-          <div class="emergency-card">
-            <strong>3º Avise os Familiares</strong>
-            <p>Peça ajuda para resolver a situação.</p>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <!-- RODAPÉ -->
-    <footer>
-      <p><strong>Guia Digital Sênior Rosa</strong> — Sua segurança é a nossa prioridade.</p>
-      <p style="margin-top: 10px; font-size: 0.95rem;">Dica: Salve esta página nos favoritos do seu navegador para ler sempre que tiver dúvidas!</p>
-    </footer>
-
-  </div>
-
-</body>
-</html>
+              <span>4.
